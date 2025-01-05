@@ -174,18 +174,6 @@ def random_decider(end_random, gato: Gato, gato_lock, end_top, hilo_top, hilo_to
             render_flag.clear()
             #pygame.display.quit()
             tiempo_dormir = random.randint(config.esperas['oculto'][0], config.esperas['oculto'][1])
-            # if config.__dict__["activo"]:
-            #     mensaje = f"{getpass.getuser()}\nMiaumiau, el próximo movimiento será aprox a las {time.strftime('%Y/%m/%d/%H:%M:%S', time.localtime(time.time()+tiempo_dormir))}  "
-            #     headers["Content-Length"] = str(len(mensaje.encode('utf-8')))
-            #     try:
-            #         resp_http = requests.post('http://casaperezholguin.ddns.net:8080/uiiai/buzon.py', data=mensaje, auth=HTTPBasicAuth('fph', 'uiiai'), headers=headers)
-            #         if resp_http.status_code != 200:
-            #             raise Exception(f"Error: {resp_http.status_code}")
-            #     except Exception as e:
-            #         if not os.path.exists(os.path.dirname(log_file)):
-            #             os.makedirs(os.path.dirname(log_file))
-            #         with open(log_file, 'a') as f:
-            #             f.write(f"{time.strftime('%Y/%m/%d %H:%M:%S', time.localtime())}: {e}\n")
             time.sleep(tiempo_dormir)
             config.cargar()
             #print(config.__dict__)

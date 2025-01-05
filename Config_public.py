@@ -35,18 +35,6 @@ class Config:
             print("Usando por defecto")
     def cargar(self):
         self.cargar_local()
-        # url = f"http://casaperezholguin.ddns.net:8080/uiiai/get_config.py?u={getpass.getuser()}"
-        # try:
-        #     response = requests.get(url, auth=HTTPBasicAuth('fph', 'uiiai'))
-        #     if response.status_code == 200:
-        #         data = response.json()
-        #         self.__dict__.update(data)
-        #         self.guardar()
-        #     else:
-        #         self.cargar_local()
-        # except Exception as e:
-        #     traceback.print_exc()
-        #     self.cargar_local()
 if __name__ == '__main__':
     config = Config()
     while True:
