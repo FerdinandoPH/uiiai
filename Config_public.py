@@ -32,6 +32,13 @@ class Config:
                 data = json.load(f)
                 self.__dict__.update(data)
         except:
+            try:
+                if not os.path.exists(os.path.dirname(config_file)):
+                    os.makedirs(os.path.dirname(config_file))
+                with open(config_file, 'w') as f:
+                    json.dump(self.__dict__, f)
+            except:
+                print("Error al cargar o guardar la configuración")
             print("Usando por defecto")
     def cargar(self):
         self.cargar_local()
